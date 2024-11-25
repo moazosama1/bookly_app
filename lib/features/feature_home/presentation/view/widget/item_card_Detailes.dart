@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/theme/color.dart';
+import '../../../../../core/theme/color.dart';
 class ItemCardDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

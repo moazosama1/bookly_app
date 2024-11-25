@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 
 class ThemeOfApp {
   static ThemeData basicTheme = ThemeData(
+    scaffoldBackgroundColor: ColorOfApp.primaryColor,
     appBarTheme:const AppBarTheme(
       color: Colors.transparent,
-      iconTheme: IconThemeData(color: ColorOfApp.whiteColor)
+      iconTheme:IconThemeData(color: ColorOfApp.whiteColor)
     ),
     colorScheme: ColorScheme.fromSeed(
         seedColor: ColorOfApp.primaryColor,

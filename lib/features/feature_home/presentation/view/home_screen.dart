@@ -1,6 +1,6 @@
 
-import 'package:bookly_app/features/presentation/view/widget/item_card.dart';
-import 'package:bookly_app/features/presentation/view/widget/item_card_Detailes.dart';
+import 'package:bookly_app/features/feature_home/presentation/view/widget/item_card.dart';
+import 'package:bookly_app/features/feature_home/presentation/view/widget/item_card_Detailes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +9,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return Scaffold(
-      backgroundColor: theme.colorScheme.primary,
       appBar: AppBar(
         title: const Image(
           image: AssetImage("assets/images/logo/logo.png"),
