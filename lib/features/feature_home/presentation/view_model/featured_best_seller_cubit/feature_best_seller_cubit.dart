@@ -1,7 +1,8 @@
 import 'package:bloc/bloc.dart';
-import 'package:bookly_app/features/feature_home/data/models/BookModel.dart';
-import 'package:bookly_app/features/feature_home/data/repos/home_repo.dart';
 import 'package:meta/meta.dart';
+
+import '../../../../../core/models/BookModel.dart';
+import '../../../data/home/repos/home_repo.dart';
 
 part 'feature_best_seller_state.dart';
 
@@ -18,6 +19,7 @@ class FeatureBestSellerCubit extends Cubit<FeatureBestSellerState> {
       },
       (books) {
         emit(FeatureBestSellerSuccess(listBooks: books));
+        print("Best Seller Success");
       },
     );
   }

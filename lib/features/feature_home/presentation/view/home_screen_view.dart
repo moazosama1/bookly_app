@@ -7,7 +7,7 @@ class HomeScreenView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    return const Scaffold(
+    return  Scaffold(
       body: HomeScreenBody(),
     );
   }

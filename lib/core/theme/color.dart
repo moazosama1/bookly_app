@@ -9,4 +9,5 @@ abstract class ColorOfApp {
   static const Color orangeColor = Color(0xffEF8262);
   static const Color goldColor = Color(0xffFFDD4F);
   static const Color blackColor = Colors.black;
+  static const Color blueColor = Color(0xff4F75FF);
 }

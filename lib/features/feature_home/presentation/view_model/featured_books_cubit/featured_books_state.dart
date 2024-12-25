@@ -1,18 +1,18 @@
 part of 'featured_books_cubit.dart';
 
 @immutable
-sealed class FeaturedBooksState {}
+sealed class FeatureNewestBooksState {}
 
-final class FeaturedBooksInitial extends FeaturedBooksState {}
+final class FeatureNewestBooksInitial extends FeatureNewestBooksState {}
 
-final class FeaturedBooksLoading extends FeaturedBooksState {}
+final class FeatureNewestBooksLoading extends FeatureNewestBooksState {}
 
-final class FeaturedBooksSuccess extends FeaturedBooksState {
+final class FeatureNewestBooksSuccess extends FeatureNewestBooksState {
   List<BookModel> listBooks;
-  FeaturedBooksSuccess({required this.listBooks});
+  FeatureNewestBooksSuccess({required this.listBooks});
 }
 
-final class FeaturedBooksFailure extends FeaturedBooksState {
+final class FeatureNewestBooksFailure extends FeatureNewestBooksState {
   String errorMessage;
-  FeaturedBooksFailure({required this.errorMessage});
+  FeatureNewestBooksFailure({required this.errorMessage});
 }

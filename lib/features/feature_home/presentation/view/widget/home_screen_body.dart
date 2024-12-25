@@ -1,18 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+
 import '../../../../../core/utils/style.dart';
-import 'custom_appBar.dart';
-import 'feature_listView_h.dart';
-import 'feature_list_best_seller.dart';
+import 'appBar_widgets/custom_appBar_home.dart';
+import 'list_of_itme/feature_listView_h.dart';
+import 'list_of_itme/feature_list_best_seller.dart';
 
 class HomeScreenBody extends StatelessWidget {
-  const HomeScreenBody({super.key});
+   const HomeScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    return const CustomScrollView(
+    return CustomScrollView(
+      physics: BouncingScrollPhysics(),
       slivers: [
         SliverToBoxAdapter(
           child: Column(
@@ -36,7 +38,10 @@ class HomeScreenBody extends StatelessWidget {
             ],
           ),
         ),
-        FeatureListBestSeller()
+        SliverToBoxAdapter(child: FeatureListBestSeller(),),
+        SliverToBoxAdapter(
+          child: SizedBox(height: 20,),
+        )
       ],
     );
   }

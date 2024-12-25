@@ -1,22 +1,23 @@
 import 'package:bloc/bloc.dart';
-import 'package:bookly_app/features/feature_home/data/models/BookModel.dart';
-import 'package:bookly_app/features/feature_home/data/repos/home_repo.dart';
 import 'package:meta/meta.dart';
+
+import '../../../../../core/models/BookModel.dart';
+import '../../../data/home/repos/home_repo.dart';
 
 part 'featured_books_state.dart';
 
-class FeatureNewestBooksCubit extends Cubit<FeaturedBooksState> {
-  FeatureNewestBooksCubit({required this.homeRepo}) : super(FeaturedBooksInitial());
+class FeatureNewestBooksCubit extends Cubit<FeatureNewestBooksState> {
+  FeatureNewestBooksCubit({required this.homeRepo}) : super(FeatureNewestBooksInitial());
   HomeRepo homeRepo;
   Future<void> getFeatureBooks() async {
-    emit(FeaturedBooksLoading());
+    emit(FeatureNewestBooksLoading());
     var result = await homeRepo.fetchNewestBook();
     result.fold(
       (failure) {
-        emit(FeaturedBooksFailure(errorMessage: failure.errorMessage));
+        emit(FeatureNewestBooksFailure(errorMessage: failure.errorMessage));
       },
       (books) {
-        emit(FeaturedBooksSuccess(listBooks: books));
+        emit(FeatureNewestBooksSuccess(listBooks: books));
       },
     );
   }

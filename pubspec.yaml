@@ -42,7 +42,20 @@ dependencies:
   dartz: ^0.10.1
   dio: ^5.7.0
   flutter_bloc: ^8.1.6
-  get_it: ^8.0.2
+  get_it: 8.0.2
+  cached_network_image: ^3.2.3
+  shimmer: ^3.0.0
+  url_launcher: ^6.3.1
+  another_flushbar: ^1.12.30
+  shared_preferences: ^2.3.4
+  infinite_carousel: ^1.1.1
+  firebase_auth: ^5.3.4
+  firebase_core: ^3.8.1
+  cloud_firestore: ^5.5.1
+  flutter_svg: ^2.0.16
+  modal_progress_hud_nsn: ^0.5.1
+  toastification: ^2.3.0
+  flutter_slidable: ^3.1.2
 
 dev_dependencies:
   flutter_test:
@@ -53,7 +66,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -70,6 +83,7 @@ flutter:
   assets:
     - assets/images/logo/
     - assets/images/image/
+    - assets/images/icon/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -7,9 +7,13 @@ import '../../../../../core/utils/style.dart';
 
 class CustomBookRating extends StatelessWidget {
    CustomBookRating({
+     required this.count,
+     required this.rating,
     this.mainAxisAlignment = MainAxisAlignment.start,
     super.key,
   });
+   num? rating ;
+   num? count ;
   MainAxisAlignment mainAxisAlignment;
   @override
   Widget build(BuildContext context) {
@@ -27,7 +31,7 @@ class CustomBookRating extends StatelessWidget {
           width: 7,
         ),
         Text(
-          "4.8",
+          "${rating??0}",
           style: Style.textStyle18
               .copyWith(color: theme.colorScheme.onPrimary),
         ),
@@ -37,7 +41,7 @@ class CustomBookRating extends StatelessWidget {
         Opacity(
           opacity: 0.5,
           child: Text(
-            "(2390)",
+            "(${count??0})",
             style: Style.textStyle18
                 .copyWith(color: theme.colorScheme.onPrimary),
           ),

@@ -12,12 +12,17 @@ class CustomButton extends StatelessWidget {
       required this.colorText,
       this.borderButton,
       this.fontSize,
-      });
+      this.onPressed,
+      this.colorLoading,
+      required this.isLoading});
+  bool isLoading;
   String textButton;
   Color colorButton;
+  Color? colorLoading;
   Color colorText;
   BorderRadius? borderButton;
   double? fontSize;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     var heightMediaQuery = MediaQuery.of(context).size.height;
@@ -26,15 +31,20 @@ class CustomButton extends StatelessWidget {
     return SizedBox(
       height: heightMediaQuery * 0.06,
       child: TextButton(
-          onPressed: () {},
+          onPressed: onPressed,
           style: ElevatedButton.styleFrom(
               backgroundColor: colorButton,
               shape: RoundedRectangleBorder(
                   borderRadius: borderButton ?? BorderRadius.circular(14))),
-          child: Text(
-            textButton,
-            style: Style.textStyle20.copyWith(color: colorText, fontSize: fontSize ?? 20 ),
-          )),
+          child: !isLoading
+              ? Text(
+                  textButton,
+                  style: Style.textStyle20
+                      .copyWith(color: colorText, fontSize: fontSize ?? 20),
+                )
+              : CircularProgressIndicator(
+                  color: colorLoading ?? theme.colorScheme.primary,
+                )),
     );
   }
 }

@@ -1,8 +1,9 @@
 import 'package:bookly_app/core/utils/style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
+
+import 'appBar_widget/custom_search_appBar.dart';
 import 'custom_text_fiield.dart';
 import 'feature_list_search_itmes.dart';
 
@@ -11,22 +12,22 @@ class SearchViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var heightMediaQuery = MediaQuery.of(context).size.height;
+    var widthMediaQuery = MediaQuery.of(context).size.width;
+    var sizeMediaQuery = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 30),
+      padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 25),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(
-            "Searching...",
-            style: Style.textStyle30.copyWith(
-                fontFamily: GoogleFonts.montserrat().fontFamily,
-                fontWeight: FontWeight.w900),
-          ),
+          CustomSearchAppBar(),
           const SizedBox(
             height: 20,
           ),
-          const CustomTextFiled(),
+          CustomTextFiled(
+            textEditingController: TextEditingController(),
+          ),
           const SizedBox(
             height: 20,
           ),
@@ -37,9 +38,11 @@ class SearchViewBody extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          const Expanded(child: FeatureListSearchItems())
+          const FeatureListSearchItems()
         ],
       ),
     );
   }
 }
+
+
