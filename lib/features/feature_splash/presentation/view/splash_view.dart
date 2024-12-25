@@ -1,7 +1,10 @@
-import 'package:bookly_app/features/feature_home/presentation/view/home_screen.dart';
+
+import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/features/feature_splash/presentation/view/widget/splash_view_body.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../../../core/function/get_locale_data.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -28,10 +31,13 @@ class _SplashViewState extends State<SplashView> {
   goToHomeView() {
     return Future.delayed(
       const Duration(seconds: 2),
-      () {
-        Get.to(HomeScreen(),
-            transition: Transition.fade,
-            duration: const Duration(milliseconds: 300),);
+      () async {
+        String? email =await getEmailFromLocaleData();
+        if (email != null) {
+          GoRouter.of(context).push(AppRouter.kHomeView);
+        } else {
+          GoRouter.of(context).push(AppRouter.kAuthView);
+        }
       },
     );
   }
