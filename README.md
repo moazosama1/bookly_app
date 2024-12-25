@@ -24,4 +24,3 @@ Others: google_fonts, cached_network_image, url_launcher
 This app combines a sleek design, high performance, and an enjoyable user experience, making it the perfect tool for book lovers.
 
 Let’s connect and share ideas! I’d love to hear your thoughts and discuss innovations in Flutter development. 💡
-![Uploading image.png…]()
